@@ -31,7 +31,7 @@ class Form extends Component {
         //     endDate: this.state.endDate.replace("-", "")
         // });
 
-        console.log(API.scrapeArticles(this.state));
+        API.scrapeArticles(this.state).then(data => console.log(data));
     }
 
     render() {

@@ -35,7 +35,7 @@ module.exports = {
             });
 
             console.log(articleArray);
-            response.json("Scrape successful!");
+            response.json(articleArray);
         });
     }
 }
