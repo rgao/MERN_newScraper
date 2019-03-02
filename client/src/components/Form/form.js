@@ -26,6 +26,7 @@ class Form extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
+        console.log(this.state)
         // this.setState({
         //     startDate: this.state.startDate.replace("-", ""),
         //     endDate: this.state.endDate.replace("-", "")
@@ -36,26 +37,28 @@ class Form extends Component {
 
     render() {
         return (
-            <form>
-                <header>Search</header>
-                <div className="form-group">
-                    <label>Topic</label>
-                    <input name="topic" value={this.state.topic} className="form-control" onChange={this.handleInputChange} type="text" placeholder="Collusion" />
-                </div>
+            <div>
+                <form>
+                    <header>Search</header>
+                    <div className="form-group">
+                        <label>Topic</label>
+                        <input name="topic" value={this.state.topic} className="form-control" onChange={this.handleInputChange} type="text" placeholder="Collusion" />
+                    </div>
 
-                <div className="form-group">
-                    <label>Start at:</label>
-                    <input name="startDate" value={this.state.startDate} className="form-control" onChange={this.handleInputChange} type="date" placeholder="11/04/2016" />
-                </div>
+                    <div className="form-group">
+                        <label>Start at:</label>
+                        <input name="startDate" value={this.state.startDate} className="form-control" onChange={this.handleInputChange} type="date" placeholder="11/04/2016" />
+                    </div>
 
-                <div className="form-group">
-                    <label>End at:</label>
-                    <input name="endDate" value={this.state.endDate} className="form-control" onChange={this.handleInputChange} type="date" placeholder="02/08/2019" />
-                </div>
+                    <div className="form-group">
+                        <label>End at:</label>
+                        <input name="endDate" value={this.state.endDate} className="form-control" onChange={this.handleInputChange} type="date" placeholder="02/08/2019" />
+                    </div>
 
-                <button className="btn btn-info" onClick={(event) => this.handleSubmit(event)}>Search!</button>
-                {/* <input type="submit" value="Submit" /> */}
-            </form>
+                    <button className="btn btn-info" onClick={(event) => this.handleSubmit(event)}>Search!</button>
+                    {/* <input type="submit" value="Submit" /> */}
+                </form>
+            </div>
         );
     }
 }

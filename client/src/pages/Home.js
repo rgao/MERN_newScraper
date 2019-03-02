@@ -8,7 +8,7 @@ function Home() {
   return (
     <div>
       <Form />
-      <Results />
+      {/* <Results /> */}
       <Link to={"/Saved"}>
         <strong>
           Saved Articles
