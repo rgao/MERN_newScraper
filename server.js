@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === "production") {
 const routes = require("./routes");
 app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/nytreact");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/nytreact", { useNewUrlParser: true, useUnifiedTopology: true });
 
 app.listen(PORT, function () {
     console.log(`API Server now listening on PORT ${PORT}!`);
