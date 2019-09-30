@@ -8,25 +8,29 @@ class SavedArticles extends Component {
     };
 
     componentDidMount() {
-        this.loadArticles();
-    };
-
-    loadArticles = () => {
+        // this.loadArticles();
         API.getArticles({ saved: true }).then(response => {
             this.setState({ articles: response.data })
                 .catch(error => console.log(error));
         });
     };
 
+    // loadArticles = () => {
+    //     API.getArticles({ saved: true }).then(response => {
+    //         this.setState({ articles: response.data })
+    //             .catch(error => console.log(error));
+    //     });
+    // };
+
     handleDelete(articleId) {
         API.deleteArticle(articleId);
     };
 
-    handleInputChange = (event, articleId) => {
-        event.preventDefault();
+    // handleInputChange = (event, articleId) => {
+    //     event.preventDefault();
 
-        this.handleNote(articleId, event.target.value);
-    };
+    //     this.handleNote(articleId, event.target.value);
+    // };
 
     handleNote(articleId, message) {
         API.saveArticle(articleId, { message: message }).then(response => {
@@ -51,9 +55,9 @@ class SavedArticles extends Component {
                                 <button className="btn btn-danger" onClick={this.handleDelete(article._id)} />
                             </div>
                         </div>
-                        <div className="form-group row">
+                        {/* <div className="form-group row">
                             <textarea onChange={this.handleInputChange(article._id)} className="form-control" rows="2" />
-                        </div>
+                        </div> */}
                     </div>
                 ))}
             </div>
